@@ -3,6 +3,17 @@
       <!-- <h2>Current Multiplier: <span>{{ multiplier  }}x</span></h2> -->
       <h2>Current Multiplier: <span>{{ multiplier | number:'1.2-2' }}x</span></h2>
     </div>
+
+      <!-- Flying Plane -->
+  <div class="plane-container">
+    <div
+      class="plane"
+      [style.transform]="getPlanePosition()"
+      [class.crashed]="crashed"
+    >
+      ✈️
+    </div>
+  </div>
   
     <div class="actions">
       <button (click)="placeBet()">Place Bet</button>

@@ -17,6 +17,7 @@ export class GameComponent implements OnInit{
   multiplier: number = 1.0;
   betPlaced: boolean = false;
   result: string | null = null;
+  crashed: boolean = false;
   private gameInterval: any;
 
   constructor() {
@@ -67,6 +68,14 @@ export class GameComponent implements OnInit{
         console.error("Error generating crash point:", error);
         return 1; // Default to a safe value
     }
+}
+
+
+getPlanePosition() {
+  const distance = this.multiplier * 10; // Scale position with multiplier
+  return this.crashed
+    ? `translateX(${distance}%) translateY(50px) rotate(45deg)` // Crash effect
+    : `translateX(${distance}%)`; // Flying animation
 }
 
 }

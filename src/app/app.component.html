@@ -1,14 +1,20 @@
 <div>
   <header>game</header>
+  <div class="main-layout">
+    <!-- Leaderboard Component -->
+    <app-leaderboard1 class="left"></app-leaderboard1>
 
-  <main>
-    <app-game></app-game>
-    <app-wallet></app-wallet>
-    <app-leaderboard1></app-leaderboard1>
-  </main>
+    <!-- Game Component -->
+    <app-game class="center"></app-game>
+  </div>
 
   <footer>
-    <p>& copy; 2025 Hamony</p>
+    <div class="wallet-grid">
+      <div class="wallet-card" *ngFor="let player of players; let i = index">
+        <h3>Player {{ i + 1 }}</h3>
+        <p>Wallet Balance: {{ player.balance | currency }}</p>
+      </div>
+    </div>
   </footer>
 </div>
 <router-outlet/>

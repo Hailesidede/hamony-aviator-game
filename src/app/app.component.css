@@ -1,24 +1,73 @@
 .container {
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  header {
-    background: #6200ea;
-    color: white;
-    padding: 1rem;
-  }
-  
-  main {
-    display: flex;
-    justify-content: space-around;
-    margin: 2rem 0;
-  }
-  
-  footer {
-    background: #f5f5f5;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #6200ea;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.left {
+  align-self: start;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background: #f5f5f5;
+  padding: 0rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.wallet-grid {
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center; /* Vertically center cards */
+  flex-wrap: nowrap; /* Prevent wrapping to a new line */
+  gap: 0rem; /* Space between cards */
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+  padding: 0.5rem 0;
+}
+
+.wallet-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  height: 100px;
+  flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+.wallet-card h3 {
+  margin: 0 0 0.5rem;
+  color: #6200ea;
+}
+
+.wallet-card p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
