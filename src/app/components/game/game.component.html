@@ -1,0 +1,15 @@
+<div class="game">
+    <div class="multiplier">
+        <h2>Current Multiplier: <span>{{ multiplier | number:'1.2-2' }}x</span></h2>
+    </div>
+  
+    <div class="actions">
+      <button (click)="placeBet()">Place Bet</button>
+      <button (click)="cashOut()" [disabled]="!betPlaced">Cash Out</button>
+    </div>
+  
+    <div class="result" *ngIf="result">
+      <p>{{ result }}</p>
+    </div>
+  </div>
+  
